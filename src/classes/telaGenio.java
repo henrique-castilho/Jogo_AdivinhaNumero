@@ -20,9 +20,20 @@ public class telaGenio extends javax.swing.JFrame {
      */
     public telaGenio() {
         initComponents();
-           
+        resetGame();
     }
     
+    private void resetGame(){
+        lblFrase.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblFrase.setText("<html>Vou pensar em um valor entre <strong>1 e 10 </strong>. Tente adivinhar. "
+                + "Você tera 3 tentativas pra acertar.</html>");
+        tentativasRestantes = 3;
+        lblTentativas.setText(Integer.toString(tentativasRestantes));
+        valorGeradoDouble =  1 + Math.random() * (10 -1);
+        valorGeradoInt = (int) valorGeradoDouble;
+        
+         System.out.println(valorGeradoInt);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -130,7 +141,7 @@ public class telaGenio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPalpiteActionPerformed
 
     private void btnReniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReniciarActionPerformed
-        
+        resetGame();
     }//GEN-LAST:event_btnReniciarActionPerformed
 
     /**
